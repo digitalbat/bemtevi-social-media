@@ -2,7 +2,10 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { SubmitButton } from "./submit-button";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import LogoXl from "@/components/LogoXl";
 
 export default function Login({
   searchParams,
@@ -74,45 +77,54 @@ export default function Login({
         Back
       </Link>
 
-      <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
-        <label className="text-md" htmlFor="email">
-          Email
-        </label>
-        <input
-          className="rounded-md px-4 py-2 bg-inherit border mb-6"
-          name="email"
-          placeholder="you@example.com"
-          required
-        />
-        <label className="text-md" htmlFor="password">
-          Password
-        </label>
-        <input
-          className="rounded-md px-4 py-2 bg-inherit border mb-6"
-          type="password"
-          name="password"
-          placeholder="••••••••"
-          required
-        />
-        <SubmitButton
-          formAction={signIn}
-          className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"
-          pendingText="Signing In..."
-        >
-          Sign In
-        </SubmitButton>
-        <SubmitButton
-          formAction={signUp}
-          className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2"
-          pendingText="Signing Up..."
-        >
-          Sign Up
-        </SubmitButton>
-        {searchParams?.message && (
-          <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
-            {searchParams.message}
-          </p>
-        )}
+      <div className="flex flex-col text-center items-center justify-items-center pb-10 pr-12">
+        <LogoXl />
+      </div>
+
+      <form >
+        <div className="text-center mb-6">
+          <div className="bg-zinc-100 pt-2 pb-2 mb-2">
+            <Label className="font-bold text-xl">Login</Label>
+          </div>
+          <h1 className="text-lg">
+            Log in to access
+          </h1>
+        </div>
+        <div className="grid gap-4 py-4 mb-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="email" className="text-right">
+              Email
+            </Label>
+            <Input
+              className="rounded-md px-4 py-2 bg-inherit border w-max"
+              name="email"
+              placeholder="you@example.com"
+              required />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="password" className="text-right">
+              Password
+            </Label>
+            <Input
+              className="rounded-md px-4 py-2 bg-inherit border w-max"
+              type="password"
+              name="password"
+              autoComplete="off"
+              required
+            />
+          </div>
+        </div>
+        <div className="flex flex-col gap-3 pt-4">
+          <Button className="bg-secondary hover:bg-secondary text-black" type="submit" formAction={signIn}>Sign In</Button>
+          {searchParams?.message && (
+            <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
+              {searchParams.message}
+            </p>
+          )}
+        </div>
+        <div className="text-center p-4">
+          or <Link href="/up">Sign Up</Link>
+        </div>
       </form>
     </div>
   );

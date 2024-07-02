@@ -26,7 +26,7 @@ export default function Login({
     });
 
     if (error) {
-      return redirect("/login?message=Could not authenticate user");
+      return redirect("/in?message=Could not authenticate user");
     }
 
     return redirect("/protected");
@@ -49,10 +49,10 @@ export default function Login({
     });
 
     if (error) {
-      return redirect("/login?message=Could not authenticate user");
+      return redirect("/in?message=Could not authenticate user");
     }
 
-    return redirect("/login?message=Check email to continue sign in process");
+    return redirect("/in?message=Check email to continue sign in process");
   };
 
   return (

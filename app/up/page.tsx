@@ -27,7 +27,7 @@ export default function Up({
     });
 
     if (error) {
-      return redirect("/signUpForm?message=Could not authenticate user");
+      return redirect("/up?message=Could not authenticate user");
     }
 
     return redirect("/protected");
@@ -49,11 +49,6 @@ export default function Up({
       },
     });
 
-    if (error) {
-      return redirect("/login?message=Could not authenticate user");
-    }
-
-    return redirect("/login?message=Check email to continue sign in process");
   };
 
   return (

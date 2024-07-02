@@ -4,7 +4,7 @@ export default function Footer() {
             <p>
                 Powered by{" "}
                 <a
-                    href="https://github.com/digitalbat"
+                    href="https://github.com/digitalbat/bemtevi-social-media"
                     target="_blank"
                     className="font-bold hover:underline"
                     rel="noreferrer"

@@ -5,7 +5,8 @@ import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import LogoXl from "@/components/LogoXl";
+import Logo from "@/components/Logo";
+import LogHeader from "@/components/LogHeader";
 
 export default function Login({
   searchParams,
@@ -77,9 +78,7 @@ export default function Login({
         Back
       </Link>
 
-      <div className="flex flex-col text-center items-center justify-items-center pb-10 pr-12">
-        <LogoXl />
-      </div>
+      <LogHeader />
 
       <form >
         <div className="text-center mb-6">

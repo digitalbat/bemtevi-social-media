@@ -13,8 +13,10 @@ export default function TopBar() {
                     </Link>
                     <h1 className="pt-4 pb-2 text-secondary -mt-6 pl-16">beta</h1>
                 </div>
-                <LogInButton />
-                <SignUpButton />
+                <div>
+                    <LogInButton />
+                    <SignUpButton />
+                </div>
             </div>
         </nav>
     )

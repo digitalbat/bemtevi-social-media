@@ -2,9 +2,9 @@ export default function Logo() {
   return (
     <svg
       aria-label="Next.js logotype"
-      height="68"
+      width="100%"
+      height="100%"
       role="img"
-      width="100"
       viewBox="0 0 772 315"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">

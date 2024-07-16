@@ -86,7 +86,7 @@ export default function Login({
             <Label className="font-bold text-xl">Login</Label>
           </div>
           <h1 className="text-lg">
-            Log in to access
+            Login to access
           </h1>
         </div>
         <div className="grid gap-4 py-4 mb-4">

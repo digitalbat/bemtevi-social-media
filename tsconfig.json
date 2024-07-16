@@ -37,5 +37,9 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "devDependencies": {
+    "@types/react": "^x.x.x",
+    "@types/react-dom": "^x.x.x"
+  }
 }

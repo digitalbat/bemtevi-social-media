@@ -45,7 +45,7 @@ export default async function LoginDialog() {
         <DialogHeader>
           <DialogTitle>Login</DialogTitle>
           <DialogDescription>
-            Log in to access
+            Login to access
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">

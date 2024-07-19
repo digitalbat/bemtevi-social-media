@@ -6,6 +6,7 @@ import {
   Dialog,
   DialogTrigger,
 } from "./ui/dialog"
+import Link from "next/link";
 
 export default async function LogInButton() {
 
@@ -33,11 +34,12 @@ export default async function LogInButton() {
       </form>
     </div>
   ) : (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button className="outline bg-secondary">Login</Button>
-      </DialogTrigger>
-      <LoginDialog />
-    </Dialog>
+    // <Dialog>
+    //   <DialogTrigger asChild>
+    //     <Button className="outline bg-secondary">Login</Button>
+    //   </DialogTrigger>
+    //   <LoginDialog />
+    // </Dialog>
+    <Link className="m-2 w-36" href="/in">Login</Link>
   );
 }

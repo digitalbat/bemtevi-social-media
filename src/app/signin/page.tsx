@@ -59,12 +59,7 @@ export default function Login({
 
       <form >
         <div className="text-center mb-6">
-          <div className="bg-zinc-100 pt-2 pb-2 mb-2">
-            <Label className="font-bold text-xl">Login</Label>
-          </div>
-          <h1 className="text-lg">
-            Login to access
-          </h1>
+          <Label className="font-bold text-xl">Login to access</Label>
         </div>
         <div className="grid gap-4 py-4 mb-4">
           <div className="grid grid-cols-4 items-center gap-4">

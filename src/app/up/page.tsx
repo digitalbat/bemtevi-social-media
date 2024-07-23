@@ -69,12 +69,7 @@ export default function Up({
 
       <form >
         <div className="text-center mb-6">
-          <div className="bg-zinc-100 pt-2 pb-2 mb-2">
-            <Label className="font-bold text-xl">Sign Up</Label>
-          </div>
-          <h1 className="text-lg">
-            Sign up to access
-          </h1>
+          <Label className="font-bold text-xl">Sign up to register</Label>
         </div>
         <div className="grid gap-4 py-4 mb-4">
           <div className="grid grid-cols-4 items-center gap-4">

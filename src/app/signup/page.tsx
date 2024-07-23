@@ -23,7 +23,7 @@ export default function Up({
     const supabase = createClient();
 
     if (confirmPassword !== password) {
-      return redirect("/up?message=Passwords do not match");
+      return redirect("/signup?message=Passwords do not match");
     }
 
 
@@ -36,10 +36,10 @@ export default function Up({
     });
 
     if (error) {
-      return redirect("/up?message=Could not registered user");
+      return redirect("/signup?message=Could not registered user");
     }
 
-    return redirect("/up?message=Confirm account creation in your email");
+    return redirect("/signup?message=Confirm account creation in your email");
   };
 
   return (
@@ -117,7 +117,7 @@ export default function Up({
           )}
         </div>
         <div className="text-center p-4">
-          or <Link href="/in">Sign In</Link>
+          or <Link href="/signin">Sign In</Link>
         </div>
       </form>
     </div>

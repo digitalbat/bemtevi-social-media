@@ -94,7 +94,7 @@ export default function Login({
           )}
         </div>
         <div className="text-center p-4">
-          or <Link href="/up">Sign Up</Link>
+          or <Link href="/signup">Sign Up</Link>
         </div>
       </form>
     </div>

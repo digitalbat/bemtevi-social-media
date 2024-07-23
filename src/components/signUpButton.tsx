@@ -30,6 +30,6 @@ export default async function SignUpButton() {
 
     </div>
   ) : (
-    <Link className="m-2 w-36" href="/up">Sign Up</Link>
+    <Link className="m-2 w-36" href="/signup">Sign Up</Link>
   );
 }

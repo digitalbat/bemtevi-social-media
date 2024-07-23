@@ -1,6 +1,7 @@
-import { createClient } from "@/utils/supabase/server";
+
 import TopBar from "@/components/TopBar";
 import Footer from "@/components/Footer";
+import { createClient } from "@/utils/supabase/client";
 
 export default async function Index() {
 

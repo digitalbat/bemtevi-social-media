@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
-import { SubmitButton } from "./submit-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Logo from "@/components/Logo";
 import LogHeader from "@/components/LogHeader";
 
 export default function Up({
@@ -14,24 +11,6 @@ export default function Up({
 }: {
   searchParams: { message: string };
 }) {
-  const signIn = async (formData: FormData) => {
-    "use server";
-
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const supabase = createClient();
-
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    if (error) {
-      return redirect("/up?message=Could not authenticate user");
-    }
-
-    return redirect("/protected");
-  };
 
   const signUp = async (formData: FormData) => {
     "use server";
@@ -104,6 +83,19 @@ export default function Up({
               className="rounded-md px-4 py-2 bg-inherit border w-max"
               type="password"
               name="password"
+              autoComplete="off"
+              required
+            />
+          </div>
+
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="password" className="text-right">
+              Confirm Password
+            </Label>
+            <Input
+              className="rounded-md px-4 py-2 bg-inherit border w-max"
+              type="confirmPassword"
+              name="confirmPassword"
               autoComplete="off"
               required
             />

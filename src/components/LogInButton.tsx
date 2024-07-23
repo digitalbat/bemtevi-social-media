@@ -1,6 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import LoginDialog from "./LoginDialog";
 import {
   Dialog,
@@ -40,6 +40,7 @@ export default async function LogInButton() {
     //   </DialogTrigger>
     //   <LoginDialog />
     // </Dialog>
-    <Link className="m-2 w-36" href="/in">Login</Link>
+
+    <Link href="/signin" className={buttonVariants({ variant: "secondary" })}>Sign In</Link>
   );
 }

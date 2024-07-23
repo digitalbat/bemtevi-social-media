@@ -32,7 +32,7 @@ export default async function LoginDialog() {
     });
 
     if (error) {
-      return redirect("/in?message=Could not authenticate user");
+      return redirect("/signin?message=Could not authenticate user");
     }
 
     return redirect("/protected");

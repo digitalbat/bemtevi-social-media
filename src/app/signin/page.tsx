@@ -26,7 +26,7 @@ export default function Login({
     });
 
     if (error) {
-      return redirect("/in?message=Could not authenticate user");
+      return redirect("/signin?message=Could not authenticate user");
     }
 
     return redirect("/protected");

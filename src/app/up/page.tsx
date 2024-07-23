@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import LogHeader from "@/components/LogHeader";
+import { redirect } from "next/navigation";
 
 export default function Up({
   searchParams,
@@ -18,7 +19,13 @@ export default function Up({
     const origin = headers().get("origin");
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
+    const confirmPassword = formData.get("confirmPassword") as string;
     const supabase = createClient();
+
+    if (confirmPassword !== password) {
+      return redirect("/up?message=Passwords do not match");
+    }
+
 
     const { error } = await supabase.auth.signUp({
       email,
@@ -28,6 +35,11 @@ export default function Up({
       },
     });
 
+    if (error) {
+      return redirect("/up?message=Could not registered user");
+    }
+
+    return redirect("/up?message=Confirm account creation in your email");
   };
 
   return (
@@ -87,19 +99,19 @@ export default function Up({
               required
             />
           </div>
-
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="password" className="text-right">
+            <Label htmlFor="confirmPassword" className="text-right">
               Confirm Password
             </Label>
             <Input
               className="rounded-md px-4 py-2 bg-inherit border w-max"
-              type="confirmPassword"
+              type="password"
               name="confirmPassword"
               autoComplete="off"
               required
             />
           </div>
+
         </div>
         <div className="flex flex-col gap-3 pt-4">
           <Button className="bg-primary hover:bg-primary text-white" type="submit" formAction={signUp}>Sign Up</Button>

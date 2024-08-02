@@ -1,13 +1,7 @@
-import { createClient } from "@/utils/supabase/client";
+import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button"
-import LoginDialog from "./LoginDialog";
-import {
-  Dialog,
-  DialogTrigger,
-} from "./ui/dialog"
 import Link from "next/link";
-import test from "node:test";
+import { buttonVariants } from "@/components/ui/button"
 
 export default async function SignUpButton() {
 
@@ -17,19 +11,9 @@ export default async function SignUpButton() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const signOut = async () => {
-    // "use server";
-
-    const supabase = createClient();
-    await supabase.auth.signOut();
-    return redirect("/");
-  };
-
-  return user ? (
-    <div className="flex items-center gap-4">
-
-    </div>
+  return !user ? (
+    <Link className="m-2 w-36" href="/signup">Sign Up</Link >
   ) : (
-    <Link className="m-2 w-36" href="/signup">Sign Up</Link>
+    <></>
   );
 }
